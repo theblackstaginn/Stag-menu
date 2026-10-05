@@ -1,4 +1,4 @@
-const CACHE_NAME = "stag-menu-pwa-v3";
+const CACHE_NAME = "stag-menu-pwa-v4";
 const APP_SCOPE = self.registration.scope;
 
 const core = path => new URL(path, APP_SCOPE).href;
