@@ -1,6 +1,6 @@
 {
-  "name": "Stag & Stone Ordering",
-  "short_name": "Stag & Stone",
+  "name": "Stag Menu",
+  "short_name": "Stag Menu",
   "description": "Customer-facing ordering interface for Stag & Stone Coffee and Bakehouse in Clarkesville, Georgia.",
   "start_url": "./",
   "scope": "./",
