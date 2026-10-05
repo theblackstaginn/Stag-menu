@@ -209,6 +209,9 @@
         window.matchMedia("(display-mode: standalone)").matches ||
         window.navigator.standalone===true;
 
+      const params=new URLSearchParams(window.location.search);
+      const freshInstallRequest=params.get("from")==="menu";
+
       let deferredPrompt=null;
 
       if("serviceWorker" in navigator){
@@ -229,7 +232,7 @@
         installStatus.textContent="Chrome has not offered the install yet.";
       }
 
-      if(isStandalone){
+      if(isStandalone && !freshInstallRequest){
         installButton.hidden=true;
         installStatus.textContent="Stag & Stone is already installed on this device.";
         return;
