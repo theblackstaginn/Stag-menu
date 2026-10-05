@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Mirrors the canonical menu at stagandstonecoffee.com; app manifest/icons remain local. -->
+  <!-- Mirrors the canonical menu at stagandstonecoffee.com; the website-only web app promo is intentionally omitted here. -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Menu | Stag &amp; Stone Coffee and Bakehouse | Clarkesville, Georgia</title>
@@ -22,7 +22,7 @@
 
       const link = document.createElement("link");
       link.rel = "stylesheet";
-      link.href = "https://stagandstonecoffee.com/menu-kiosk.css?v=10" + (cacheBust ? "&_cb=" + encodeURIComponent(cacheBust) : "");
+      link.href = "https://stagandstonecoffee.com/menu-kiosk.css?v=11" + (cacheBust ? "&_cb=" + encodeURIComponent(cacheBust) : "");
       document.head.appendChild(link);
     })();
   </script>
@@ -93,10 +93,7 @@
             <h1 id="categoryTitle">Menu</h1>
             <p class="stage-note" id="categoryNote"></p>
           </div>
-          <div class="stage-actions">
-            <div class="availability-note">Seasonal offerings may vary.</div>
-            <a class="download-app-link" href="https://theblackstaginn.github.io/Stag-menu/">Download the App</a>
-          </div>
+          <div class="availability-note">Seasonal offerings may vary.</div>
         </div>
 
         <div class="product-grid" id="productGrid"></div>
