@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- UI/data/behavior mirror the canonical menu at stagandstonecoffee.com. -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>Stag & Stone — Order</title>
-  <meta name="description" content="Touch-first ordering interface for Stag & Stone Coffee and Bakehouse." />
+  <title>Menu | Stag &amp; Stone Coffee and Bakehouse | Clarkesville, Georgia</title>
+  <meta name="description" content="Explore the Stag & Stone Coffee and Bakehouse menu featuring coffee, espresso, breakfast, lunch, bakehouse offerings, sides, sauces, jams, and add-ons in Clarkesville, Georgia." />
+  <link rel="canonical" href="https://stagandstonecoffee.com/menu.html" />
   <meta name="theme-color" content="#16110d" />
   <link rel="icon" href="favicon.png" />
   <link rel="apple-touch-icon" href="icon-512.png" />
@@ -20,7 +22,7 @@
 
       const link = document.createElement("link");
       link.rel = "stylesheet";
-      link.href = "styles.css?v=27" + (cacheBust ? "&_cb=" + encodeURIComponent(cacheBust) : "");
+      link.href = "https://stagandstonecoffee.com/menu-kiosk.css?v=9" + (cacheBust ? "&_cb=" + encodeURIComponent(cacheBust) : "");
       document.head.appendChild(link);
     })();
   </script>
@@ -65,7 +67,7 @@
 
   <div class="kiosk-shell">
     <header class="topbar">
-      <button class="brand-lockup" id="homeBtn" type="button" aria-label="Return to menu home">
+      <button class="brand-lockup" id="homeBtn" type="button" aria-label="Return to Stag and Stone home">
         <span class="brand-kicker">Coffee & Bakehouse</span>
         <span class="brand-name">Stag & Stone</span>
       </button>
@@ -81,7 +83,7 @@
     <main class="workspace">
       <aside class="category-rail" aria-label="Menu categories">
         <div class="category-list" id="categoryList"></div>
-        <button class="rail-info" id="sourceBtn" type="button">Menu source ↗</button>
+        <button class="rail-info" id="sourceBtn" type="button">Website home ↗</button>
       </aside>
 
       <section class="menu-stage" aria-live="polite">
@@ -135,7 +137,7 @@
       <div class="sheet-content">
         <p class="eyebrow" id="itemCategory"></p>
         <h2 id="itemName"></h2>
-        <p class="sheet-source">Current offering from stagandstonecoffee.com</p>
+        <p class="sheet-source">From the Stag & Stone menu</p>
 
         <div class="modifier-host" id="modifierHost"></div>
 
@@ -174,10 +176,10 @@
       const suffix = cacheBust ? "&_cb=" + encodeURIComponent(cacheBust) : "";
 
       const menuData = document.createElement("script");
-      menuData.src = "menu-data.js?v=4" + suffix;
+      menuData.src = "https://stagandstonecoffee.com/menu-kiosk-data.js?v=1" + suffix;
       menuData.onload = () => {
         const app = document.createElement("script");
-        app.src = "app.js?v=7" + suffix;
+        app.src = "https://stagandstonecoffee.com/menu-kiosk.js?v=3" + suffix;
         document.body.appendChild(app);
       };
       document.body.appendChild(menuData);
