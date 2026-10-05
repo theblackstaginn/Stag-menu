@@ -1,4 +1,4 @@
-const CACHE_NAME = "stag-menu-pwa-v2";
+const CACHE_NAME = "stag-menu-pwa-v3";
 const APP_SCOPE = self.registration.scope;
 
 const core = path => new URL(path, APP_SCOPE).href;
@@ -6,8 +6,10 @@ const CORE_ASSETS = [
   core(""),
   core("index.html"),
   core("manifest.webmanifest"),
-  core("favicon.png"),
-  core("icon-512.png"),
+  core("Assets/menu-icon.webp"),
+  core("Assets/menu-icon-180.png"),
+  core("Assets/menu-icon-192.png"),
+  core("Assets/menu-icon-512.png"),
   core("install/")
 ];
 
