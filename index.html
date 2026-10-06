@@ -19,12 +19,13 @@
   <script>
     (() => {
       const params = new URLSearchParams(window.location.search);
-      const cacheBust = params.get("_cb") || "";
-      window.__STAG_CACHE_BUST__ = cacheBust;
+      const requestedBust = params.get("_cb") || "";
+      const launchBust = requestedBust || Date.now().toString(36);
+      window.__STAG_CACHE_BUST__ = launchBust;
 
       const link = document.createElement("link");
       link.rel = "stylesheet";
-      link.href = "https://stagandstonecoffee.com/menu-kiosk.css?v=13" + (cacheBust ? "&_cb=" + encodeURIComponent(cacheBust) : "");
+      link.href = "https://stagandstonecoffee.com/menu-kiosk.css?v=13&_cb=" + encodeURIComponent(launchBust);
       document.head.appendChild(link);
     })();
   </script>
@@ -174,8 +175,8 @@
 
   <script>
     (() => {
-      const cacheBust = window.__STAG_CACHE_BUST__ || "";
-      const suffix = cacheBust ? "&_cb=" + encodeURIComponent(cacheBust) : "";
+      const cacheBust = window.__STAG_CACHE_BUST__ || Date.now().toString(36);
+      const suffix = "&_cb=" + encodeURIComponent(cacheBust);
 
       const menuData = document.createElement("script");
       menuData.src = "https://stagandstonecoffee.com/menu-kiosk-data.js?v=2" + suffix;
@@ -189,8 +190,13 @@
   </script>
   <script>
     if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./service-worker.js").catch(() => {});
+      window.addEventListener("load", async () => {
+        try {
+          const registration = await navigator.serviceWorker.register("./service-worker.js", {
+            updateViaCache: "none"
+          });
+          await registration.update();
+        } catch {}
       });
     }
   </script>
