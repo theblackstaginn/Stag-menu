@@ -1,4 +1,4 @@
-const CACHE_NAME = "stag-menu-pwa-v4";
+const CACHE_NAME = "stag-menu-pwa-v5";
 const APP_SCOPE = self.registration.scope;
 
 const core = path => new URL(path, APP_SCOPE).href;
@@ -46,7 +46,7 @@ self.addEventListener("fetch", event => {
 
   if (request.mode === "navigate") {
     event.respondWith(
-      fetch(request)
+      fetch(request, { cache: "no-store" })
         .then(response => {
           const copy = response.clone();
           caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
@@ -61,7 +61,7 @@ self.addEventListener("fetch", event => {
   }
 
   event.respondWith(
-    fetch(request)
+    fetch(request, { cache: "no-store" })
       .then(response => {
         const copy = response.clone();
         caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
