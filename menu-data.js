@@ -6,7 +6,7 @@
 
   // Optional preview override: menu.html?season=spring
   const requestedSeason = new URLSearchParams(window.location.search).get("season");
-  const SUPPORTED_SEASONS = new Set(["autumn", "spring"]);
+  const SUPPORTED_SEASONS = new Set(["autumn"]);
   const ACTIVE_SEASON = SUPPORTED_SEASONS.has(requestedSeason)
     ? requestedSeason
     : DEFAULT_SEASON;
