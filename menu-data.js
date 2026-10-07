@@ -129,7 +129,7 @@
         { id:"roasted-asparagus", categoryId:"sides-addons", name:"Roasted Asparagus", image:image("roasted-asparagus.webp"), price:4.25, seasonal:true },
         { id:"strawberry-preserve", categoryId:"sides-addons", name:"Strawberry Preserve", image:image("strawberry-preserves.webp"), seasonal:true },
         { id:"herb-aioli", categoryId:"sides-addons", name:"Herb Aioli", image:image("herb-aioli.webp"), price:0.75, seasonal:true },
-        { id:"honey-mustard", categoryId:"sides-addons", name:"Honey Mustard", image:image("whole-grn-hon-must.webp"), price:0.75, seasonal:true }
+        { id:"honey-mustard", categoryId:"sides-addons", name:"House-Made Whole Grain Honey Mustard", image:image("whole-grn-hon-must.webp"), price:0.75, seasonal:true }
       ],
       crafting:[
         { id:"spring-fried-meat", name:"Country-Fried Pork Tenderloin", price:4.75, seasonal:true },
